@@ -9,7 +9,7 @@ const links = [
 const Navbar = () => (
   <nav className="navbar-wrapper">
     <div className="navbar">
-      <img src={Icon} alt="Icon" />
+      <img className="logo-icon" src={Icon} alt="Icon" />
       <h1>Space Travelers&apos; Hub</h1>
       <ul>
         {links.map((link) => (
