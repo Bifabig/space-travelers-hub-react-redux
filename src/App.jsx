@@ -1,15 +1,12 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
+import Rockets from './routes/Rockets';
 
 const App = () => (
   <Routes>
     <Route path="/" element={<Layout />}>
-      {/* <Route index element={<Rockets />} />
       <Route path="rockets" element={<Rockets />} />
-      <Route path="missons" element={<Missons />} />
-      <Route path="profile" element={<Profile />} />
-      <Route path="*" element={<NotMatch />} /> */}
     </Route>
   </Routes>
 );
