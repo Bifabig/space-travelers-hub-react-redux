@@ -1,13 +1,88 @@
-import React, { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { getMissionItems } from '../components/redux/missons/missonsSlice';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import Table from 'react-bootstrap/Table';
+import Button from 'react-bootstrap/Button';
+import Badge from 'react-bootstrap/Badge';
+import {
+  getMissionItems,
+  joinMission,
+  leaveMission,
+} from '../components/redux/missons/missonsSlice';
+import styles from '../styles/Missions.module.css';
 
 const Missons = () => {
   const dispatch = useDispatch();
+  const { missions, isLoading, error } = useSelector((state) => state.missions);
   useEffect(() => {
-    dispatch(getMissionItems());
-  }, [dispatch]);
-  return <div>Missons</div>;
+    if (missions.length === 0) {
+      dispatch(getMissionItems());
+    }
+  }, [dispatch, missions.length]);
+  const handleJoinMission = (id) => {
+    dispatch(joinMission(id));
+  };
+
+  const handleLeaveMission = (id) => {
+    dispatch(leaveMission(id));
+  };
+
+  if (error) <h2>Something went wrong</h2>;
+
+  return isLoading ? (
+    <h1>Loading...</h1>
+  ) : (
+    <section className={styles.wrapper}>
+      <hr />
+      <div className={styles.table}>
+        <Table striped bordered hover responsive>
+          <thead>
+            <tr>
+              <th>Mission</th>
+              <th>Description</th>
+              <th>Status</th>
+              <th>{'    '}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {missions.map((mission) => (
+              <tr key={mission.mission_id}>
+                <td>{mission.mission_name}</td>
+                <td className={styles.desc}>{mission.description}</td>
+                <td>
+                  <div className={styles.center}>
+                    {mission.reserved ? (
+                      <Badge bg="success">Active Member</Badge>
+                    ) : (
+                      <Badge bg="secondary">Not A Member</Badge>
+                    )}
+                  </div>
+                </td>
+                <td>
+                  <div className={styles.centerBtn}>
+                    {mission.reserved ? (
+                      <Button
+                        variant="outline-danger"
+                        onClick={() => handleLeaveMission(mission.mission_id)}
+                      >
+                        Leave Mission
+                      </Button>
+                    ) : (
+                      <Button
+                        variant="outline-secondary"
+                        onClick={() => handleJoinMission(mission.mission_id)}
+                      >
+                        Join Mission
+                      </Button>
+                    )}
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </Table>
+      </div>
+    </section>
+  );
 };
 
 export default Missons;
