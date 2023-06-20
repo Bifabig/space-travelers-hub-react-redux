@@ -3,7 +3,6 @@
   padding: 0;
   list-style-type: none;
   text-decoration: none;
-  
 }
 
 .navbar {
@@ -18,9 +17,8 @@
 
 .logo-icon {
   height: 3rem;
-  
 }
 
-.active { 
+.active {
   text-decoration: underline;
 }

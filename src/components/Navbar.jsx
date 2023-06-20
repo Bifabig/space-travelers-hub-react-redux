@@ -14,7 +14,12 @@ const Navbar = () => (
       <ul>
         {links.map((link) => (
           <li key={link.text}>
-            <NavLink to={link.path} activeClassName="active">{link.text}</NavLink>
+            <NavLink
+              to={link.path}
+              className={({ isActive }) => (isActive ? 'active' : 'none')}
+            >
+              {link.text}
+            </NavLink>
           </li>
         ))}
       </ul>
