@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import { reserveRocket, getRockets } from '../components/redux/rockets/rocketsSlice';
+import { cancelReserveRocket, reserveRocket, getRockets } from '../components/redux/rockets/rocketsSlice';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -16,7 +16,9 @@ const Rockets = () => {
   const handleReserveRocket = (id) => {
     dispatch(reserveRocket(id));
   };
-
+  const handleCancelReserveRocket = (id) => {
+    dispatch(cancelReserveRocket(id));
+  };
   if (error) return <h2>Something went wrong</h2>;
 
   return isLoading ? (
@@ -41,7 +43,8 @@ const Rockets = () => {
               </p>
               {rocket.reserved ? (
                 <Button
-                  variant="secondary"
+                  variant="outline-secondary"
+                  onClick={() => handleCancelReserveRocket(rocket.rocket_id)}
                 >
                   Cancel Reservation
                 </Button>
