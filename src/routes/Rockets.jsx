@@ -13,6 +13,9 @@ const Rockets = () => {
     }
   }, [dispatch, rockets.length]);
 
+  const handleReserveRocket = (id) => {
+    dispatch(reserveRocket(id));
+  };
 
   if (error) return <h2>Something went wrong</h2>;
 
