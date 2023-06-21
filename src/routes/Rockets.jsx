@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
 import { cancelReserveRocket, reserveRocket, getRockets } from '../components/redux/rockets/rocketsSlice';
+import styles from '../styles/Rockets.module.css';
 
 const Rockets = () => {
   const dispatch = useDispatch();
@@ -26,15 +27,15 @@ const Rockets = () => {
   ) : (
     <>
       <hr />
-      <div className="rockets-wrapper">
+      <div className={styles.rocketsWrapper}>
         {rockets.map((rocket) => (
-          <div key={rocket.rocket_id} className="rocket">
-            <img src={rocket.flickr_images[0]} alt="" />
-            <div className="rocket-info">
+          <div key={rocket.rocket_id} className={styles.rocket}>
+            <img className={styles.image} src={rocket.flickr_images[0]} alt="" />
+            <div className={styles.rocketInfo}>
               <h2>{rocket.rocket_name}</h2>
-              <p className="rocket-description">
+              <p className={styles.rocketDescription}>
                 {rocket.reserved ? (
-                  <span className="reserved">
+                  <span className={styles.reserved}>
                     <Badge bg="success">Reserved</Badge>
                   </span>
                 ) : null}

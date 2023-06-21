@@ -47,7 +47,6 @@ const rocketsSlice = createSlice({
         const fulfilledState = state;
         fulfilledState.isLoading = false;
         fulfilledState.rockets = action.payload;
-        console.log(fulfilledState.rockets);
       })
       .addCase(getRockets.rejected, (state) => {
         const rejectedState = state;
