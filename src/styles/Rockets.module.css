@@ -1,0 +1,16 @@
+.rockets-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.rocket {
+  display: flex;
+  padding: 0.8rem 5rem 0.8rem 5rem;
+}
+
+.image {
+  height: auto;
+  width: 280px;
+  padding-right: 1.5rem;
+  object-fit: contain;
+}
