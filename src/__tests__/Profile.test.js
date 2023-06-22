@@ -32,4 +32,16 @@ describe('Profile', () => {
 
     expect(screen.getByText('Rockets Loading')).toBeInTheDocument();
   });
+
+  it('renders error message when missions or rockets have errors', () => {
+    useSelector.mockReturnValue({
+      missions: [],
+      isLoading: false,
+      error: 'error',
+    });
+
+    render(<Profile />);
+
+    expect(screen.getByText('Something went wrong')).toBeInTheDocument();
+  });
 });
