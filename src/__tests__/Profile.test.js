@@ -22,7 +22,7 @@ describe('Profile', () => {
   });
 
   it('renders loading state when rockets are loading', () => {
-    useSelector.mockReturnValueOnce({
+    useSelector.mockReturnValue({
       rockets: [],
       isLoading: true,
       error: null,
