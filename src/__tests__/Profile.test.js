@@ -44,4 +44,43 @@ describe('Profile', () => {
 
     expect(screen.getByText('Something went wrong')).toBeInTheDocument();
   });
+
+  it('renders missions list when missions are available', () => {
+    const missions = [
+      { mission_id: 1, mission_name: 'Mission 1', reserved: true },
+      { mission_id: 2, mission_name: 'Mission 2', reserved: false },
+    ];
+    const rockets = [
+      { rocket_id: 1, rocket_name: 'Rocket 1', reserved: true },
+      { rocket_id: 2, rocket_name: 'Rocket 2', reserved: false },
+    ];
+    useSelector.mockReturnValueOnce({
+      missions,
+      isLoading: false,
+      error: null,
+    });
+
+    useSelector.mockReturnValueOnce({
+      rockets,
+      isLoading: false,
+      error: null,
+    });
+
+    render(<Profile />);
+    missions.forEach((mission) => {
+      if (mission.reserved) {
+        expect(screen.getByText(mission.mission_name)).toBeInTheDocument();
+      } else {
+        expect(screen.queryByText(mission.mission_name)).not.toBeInTheDocument();
+      }
+    });
+
+    rockets.forEach((rocket) => {
+      if (rocket.reserved) {
+        expect(screen.getByText(rocket.rocket_id)).toBeInTheDocument();
+      } else {
+        expect(screen.queryByText(rocket.rocket_id)).not.toBeInTheDocument();
+      }
+    });
+  });
 });
