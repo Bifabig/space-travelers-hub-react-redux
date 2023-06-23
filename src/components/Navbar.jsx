@@ -4,7 +4,7 @@ import styles from '../styles/Navbar.module.css';
 
 const links = [
   { path: '/rockets', text: 'Rockets' },
-  { path: '/missons', text: 'Missons' },
+  { path: '/missions', text: 'Missions' },
   { path: '/profile', text: 'Profile' },
 ];
 const Navbar = () => (
