@@ -13,10 +13,11 @@
   flex-direction: row;
   justify-content: space-between;
   align-self: center;
+  gap: 2rem;
   width: 90%;
 }
 
-.missions {
+.reserve {
   display: flex;
   flex-direction: column;
   width: 50%;

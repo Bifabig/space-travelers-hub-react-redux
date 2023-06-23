@@ -21,7 +21,7 @@ const Profile = () => {
     <div className={styles.wrapper}>
       <hr />
       <div className={styles.profile}>
-        <div className={styles.missions}>
+        <div className={styles.reserve}>
           <h2>My Missions</h2>
           {missionsLoading ? (<div>Missions Loading</div>) : (
             <ListGroup>
@@ -34,9 +34,8 @@ const Profile = () => {
               )))}
             </ListGroup>
           )}
-
         </div>
-        <div>
+        <div className={styles.reserve}>
           <h2>My Rockets</h2>
           {rocketsLoading ? (<div>Rockets Loading</div>) : (
             <ListGroup>

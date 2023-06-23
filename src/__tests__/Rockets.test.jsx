@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import { useDispatch, useSelector } from 'react-redux';
 import Rockets from '../routes/Rockets';
-import { getRockets, reserveRocket, cancelReserveRocket } from '../components/redux/rockets/rocketsSlice';
+import { getRockets, reserveRocket, cancelReserveRocket } from '../redux/rockets/rocketsSlice';
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('react-redux', () => ({
@@ -10,7 +10,7 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
 }));
 
-jest.mock('../components/redux/rockets/rocketsSlice', () => ({
+jest.mock('../redux/rockets/rocketsSlice', () => ({
   getRockets: jest.fn(),
   reserveRocket: jest.fn(),
   cancelReserveRocket: jest.fn(),

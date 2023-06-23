@@ -1,11 +1,11 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import configureStore from 'redux-mock-store'; import thunk from 'redux-thunk';
+import configureStore from 'redux-mock-store';
+import thunk from 'redux-thunk';
 import axios from 'axios';
 import rocketsReducer, {
   getRockets,
   reserveRocket,
   cancelReserveRocket,
-} from '../components/redux/rockets/rocketsSlice';
+} from '../redux/rockets/rocketsSlice';
 
 const mockStore = configureStore([thunk]);
 jest.mock('axios');

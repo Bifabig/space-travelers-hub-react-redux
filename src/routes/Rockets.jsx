@@ -2,7 +2,11 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Button from 'react-bootstrap/Button';
 import Badge from 'react-bootstrap/Badge';
-import { cancelReserveRocket, reserveRocket, getRockets } from '../components/redux/rockets/rocketsSlice';
+import {
+  cancelReserveRocket,
+  reserveRocket,
+  getRockets,
+} from '../redux/rockets/rocketsSlice';
 import styles from '../styles/Rockets.module.css';
 
 const Rockets = () => {
@@ -30,13 +34,17 @@ const Rockets = () => {
       <div className={styles.rocketsWrapper}>
         {rockets.map((rocket) => (
           <div key={rocket.rocket_id} className={styles.rocket}>
-            <img className={styles.image} src={rocket.flickr_images[0]} alt="" />
+            <img
+              className={styles.image}
+              src={rocket.flickr_images[0]}
+              alt=""
+            />
             <div className={styles.rocketInfo}>
               <h2>{rocket.rocket_name}</h2>
               <p className={styles.rocketDescription}>
                 {rocket.reserved ? (
                   <span className={styles.reserved}>
-                    <Badge bg="success">Reserved</Badge>
+                    <Badge bg="info">Reserved</Badge>
                   </span>
                 ) : null}
 
@@ -57,12 +65,10 @@ const Rockets = () => {
                   Reserve Rocket
                 </Button>
               )}
-
             </div>
           </div>
         ))}
       </div>
-
     </>
   );
 };

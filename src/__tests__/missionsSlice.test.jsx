@@ -5,7 +5,7 @@ import missionsReducer, {
   getMissionItems,
   joinMission,
   leaveMission,
-} from '../components/redux/missions/missionsSlice';
+} from '../redux/missions/missionsSlice';
 
 const mockStore = configureStore([thunk]);
 jest.mock('axios');

@@ -6,7 +6,7 @@ import {
   getMissionItems,
   joinMission,
   leaveMission,
-} from '../components/redux/missions/missionsSlice';
+} from '../redux/missions/missionsSlice';
 import '@testing-library/jest-dom/extend-expect';
 
 jest.mock('react-redux', () => ({
@@ -14,7 +14,7 @@ jest.mock('react-redux', () => ({
   useSelector: jest.fn(),
 }));
 
-jest.mock('../components/redux/missions/missionsSlice', () => ({
+jest.mock('../redux/missions/missionsSlice', () => ({
   getMissionItems: jest.fn(),
   joinMission: jest.fn(),
   leaveMission: jest.fn(),

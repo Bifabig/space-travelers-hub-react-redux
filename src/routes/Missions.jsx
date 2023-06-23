@@ -7,7 +7,7 @@ import {
   getMissionItems,
   joinMission,
   leaveMission,
-} from '../components/redux/missions/missionsSlice';
+} from '../redux/missions/missionsSlice';
 import styles from '../styles/Missions.module.css';
 
 const Missions = () => {
@@ -51,7 +51,7 @@ const Missions = () => {
                 <td>
                   <div className={styles.center}>
                     {mission.reserved ? (
-                      <Badge bg="success">Active Member</Badge>
+                      <Badge bg="info">Active Member</Badge>
                     ) : (
                       <Badge bg="secondary">Not A Member</Badge>
                     )}
