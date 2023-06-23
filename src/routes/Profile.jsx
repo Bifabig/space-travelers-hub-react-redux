@@ -23,7 +23,7 @@ const Profile = () => {
       <div className={styles.profile}>
         <div className={styles.missions}>
           <h2>My Missions</h2>
-          {missionsLoading ? (<div>Loading</div>) : (
+          {missionsLoading ? (<div>Missions Loading</div>) : (
             <ListGroup>
               {missions.map((mission) => (mission.reserved ? (
                 <ListGroup.Item key={mission.mission_id} className={styles.listItem}>
@@ -38,7 +38,7 @@ const Profile = () => {
         </div>
         <div>
           <h2>My Rockets</h2>
-          {rocketsLoading ? (<div>Loading</div>) : (
+          {rocketsLoading ? (<div>Rockets Loading</div>) : (
             <ListGroup>
               {rockets.map((rocket) => (rocket.reserved ? (
                 <ListGroup.Item key={rocket.rocket_id} className={styles.listItem}>

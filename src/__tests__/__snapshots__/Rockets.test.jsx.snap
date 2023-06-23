@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rockets should dispatch getRockets when rockets array is empty 1`] = `
+<div>
+  <hr />
+  <div
+    class="rocketsWrapper"
+  />
+</div>
+`;
+
+exports[`Rockets should render error message when error exists 1`] = `
+<div>
+  <h2>
+    Something went wrong
+  </h2>
+</div>
+`;
+
+exports[`Rockets should render the rockets 1`] = `
+<div>
+  <hr />
+  <div
+    class="rocketsWrapper"
+  >
+    <div
+      class="rocket"
+    >
+      <img
+        alt=""
+        class="image"
+        src="image_url"
+      />
+      <div
+        class="rocketInfo"
+      >
+        <h2>
+          Falcon 9
+        </h2>
+        <p
+          class="rocketDescription"
+        >
+          Rocket description
+        </p>
+        <button
+          class="btn btn-primary"
+          type="button"
+        >
+          Reserve Rocket
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
