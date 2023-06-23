@@ -1,0 +1,30 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper hr {
+  align-self: center;
+  width: 95%;
+}
+
+.table {
+  align-self: center;
+  width: 90%;
+}
+
+.desc {
+  width: 50%;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  margin-top: 80px;
+}
+
+.centerBtn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 70px;
+}

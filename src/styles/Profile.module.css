@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper hr {
+  align-self: center;
+  width: 95%;
+}
+
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  gap: 2rem;
+  width: 90%;
+}
+
+.reserve {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.listItem {
+  padding: 1rem;
+}
