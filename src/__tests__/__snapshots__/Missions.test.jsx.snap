@@ -1,0 +1,121 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Missions should dispatch getMissionItems when rockets array is empty 1`] = `
+<div>
+  <section
+    class="wrapper"
+  >
+    <hr />
+    <div
+      class="table"
+    >
+      <div
+        class="table-responsive"
+      >
+        <table
+          class="table table-striped table-bordered table-hover"
+        >
+          <thead>
+            <tr>
+              <th>
+                Mission
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Status
+              </th>
+              <th>
+                    
+              </th>
+            </tr>
+          </thead>
+          <tbody />
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+`;
+
+exports[`Missions should render error message when error exists 1`] = `
+<div>
+  <h2>
+    Something went wrong
+  </h2>
+</div>
+`;
+
+exports[`Missions should render the missions 1`] = `
+<div>
+  <section
+    class="wrapper"
+  >
+    <hr />
+    <div
+      class="table"
+    >
+      <div
+        class="table-responsive"
+      >
+        <table
+          class="table table-striped table-bordered table-hover"
+        >
+          <thead>
+            <tr>
+              <th>
+                Mission
+              </th>
+              <th>
+                Description
+              </th>
+              <th>
+                Status
+              </th>
+              <th>
+                    
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                Thaicom
+              </td>
+              <td
+                class="desc"
+              >
+                Mission description
+              </td>
+              <td>
+                <div
+                  class="center"
+                >
+                  <span
+                    class="badge bg-secondary"
+                  >
+                    Not A Member
+                  </span>
+                </div>
+              </td>
+              <td>
+                <div
+                  class="centerBtn"
+                >
+                  <button
+                    class="btn btn-outline-secondary"
+                    type="button"
+                  >
+                    Join Mission
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+`;
