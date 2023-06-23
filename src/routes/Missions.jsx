@@ -7,10 +7,10 @@ import {
   getMissionItems,
   joinMission,
   leaveMission,
-} from '../components/redux/missons/missonsSlice';
+} from '../components/redux/missions/missionsSlice';
 import styles from '../styles/Missions.module.css';
 
-const Missons = () => {
+const Missions = () => {
   const dispatch = useDispatch();
   const { missions, isLoading, error } = useSelector((state) => state.missions);
   useEffect(() => {
@@ -26,7 +26,7 @@ const Missons = () => {
     dispatch(leaveMission(id));
   };
 
-  if (error) <h2>Something went wrong</h2>;
+  if (error) return <h2>Something went wrong</h2>;
 
   return isLoading ? (
     <h1>Loading...</h1>
@@ -85,4 +85,4 @@ const Missons = () => {
   );
 };
 
-export default Missons;
+export default Missions;

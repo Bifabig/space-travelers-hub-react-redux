@@ -20,7 +20,7 @@ export const getMissionItems = createAsyncThunk(
   },
 );
 
-const missonsSlice = createSlice({
+const missionsSlice = createSlice({
   name: 'missions',
   initialState,
   reducers: {
@@ -60,5 +60,5 @@ const missonsSlice = createSlice({
   },
 });
 
-export const { joinMission, leaveMission } = missonsSlice.actions;
-export default missonsSlice.reducer;
+export const { joinMission, leaveMission } = missionsSlice.actions;
+export default missionsSlice.reducer;
