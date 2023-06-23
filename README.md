@@ -75,7 +75,7 @@
 
 <!-- > Add a link to your deployed project. -->
 
-- <a href="https://dashboard.render.com/static/srv-ci9mhr59aq022nep8jk0">Space Travelers' Hub Live</a>
+- <a href="https://space-travelers-hub-cz9s.onrender.com/">Space Travelers' Hub Live</a>
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
